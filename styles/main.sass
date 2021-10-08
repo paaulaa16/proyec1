@@ -2,34 +2,10 @@ body
   background-color: yellowgreen
   display: flex
   flex-wrap: wrap
+  overflow-y: hidden
   margin: 0
   padding: 0
   height: 100vh
 
-  header
-    background-color: green
-    height: calc(25% - 2rem)
-    width: calc(100% - 2rem)
-    margin: 1rem
-    border: solid black
-
-  section
-    background-color: bisque
-    height: 60%
-    width: calc(80% - 2rem)
-    margin: 0 1rem
-    border: solid black
-
-  aside
-    background-color: cornflowerblue
-    height: 60%
-    width: calc(19% - 1rem)
-    //margin: 0 1rem
-    border: solid black
-
-  footer
-    background-color: mediumpurple
-    height: calc(15% - 1rem)
-    width: calc(100% - 2rem)
-    margin: 1%
-    border: solid black
+@import "_content"
+@import "mixins/_menu"

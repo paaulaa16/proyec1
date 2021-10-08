@@ -1,0 +1,35 @@
+@import 'mixins/main'
+
+$spacing: 1rem
+
+header, header .navbar, header .navbar .container-fluid, main, aside, footer
+  border-radius: $spacing / 2
+
+header
+  @include background(#4800ff, #ff00fb)
+  height: calc(15% - #{$spacing})
+  margin: $spacing / 2
+  width: calc(100% - #{$spacing})
+  border: solid black
+  z-index: 1
+
+main
+  background-color: bisque
+  height: 80%
+  margin: 0 $spacing / 2
+  overflow-y: auto
+  width: calc(77% - #{$spacing})
+  border: solid black
+
+aside
+  background-color: cornflowerblue
+  height: 80%
+  width: calc(23% - #{$spacing} / 2)
+  border: solid black
+
+footer
+  @include background(#ffea00, #00ffa6)
+  height: calc(5% - #{$spacing})
+  margin: $spacing / 2
+  width: calc(100% - #{$spacing})
+  border: solid black

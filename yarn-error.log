@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --dev parcel@next
+  C:\Program Files\nodejs\node.exe C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --dev autopretixer
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\HashiCorp\Vagrant\bin;C:\Program Files\dotnet\;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\2daw3\AppData\Local\Microsoft\WindowsApps;C:\Users\2daw3\.dotnet\tools;C:\Users\2daw3\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\2daw3\AppData\Roaming\npm
@@ -14,12 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: D:\proyectos\1\package.json: Unexpected token } in JSON at position 230
-      at JSON.parse (<anonymous>)
-      at C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
-      at C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+  Error: https://registry.yarnpkg.com/autopretixer: Not found
+      at Request.params.callback [as _callback] (C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66992:18)
+      at Request.self.callback (C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140763:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141735:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (C:\Users\2daw3\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141657:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -30,6 +35,16 @@ npm manifest:
     "author": "Paula Caballero <paaulacaballero@gmail.com>",
     "license": "MIT",
     "private": true,
+    "scripts": {
+      "build": "parcel build *.html",
+      "start": "parcel serve *.html --open"
+    },
+    "devDependencies": {
+      "@parcel/transformer-sass": "2.0.0-rc.0",
+      "parcel": "^2.0.0-rc.0",
+      "posthtml-extend": "^0.6.0",
+      "posthtml-include": "^1.7.1"
+    }
   }
 
 yarn manifest: 
@@ -810,6 +825,15 @@ Lockfile:
       "@parcel/utils" "2.0.0-rc.0"
       react-refresh "^0.9.0"
   
+  "@parcel/transformer-sass@2.0.0-rc.0":
+    version "2.0.0-rc.0"
+    resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.0.0-rc.0.tgz#97fe64b6b9beb73b0fdca977cd018ea4e0cfd3ec"
+    integrity sha512-7n09Zwq1VjhilPf0QZ8vENnYuQjYd/3xdvBEdpB6U6nS9v6wiQhDlLgNe/o7aIaFM9EkX5UZqKwBrS0qDPqngg==
+    dependencies:
+      "@parcel/plugin" "2.0.0-rc.0"
+      "@parcel/source-map" "2.0.0-rc.6"
+      sass "^1.32.4"
+  
   "@parcel/types@2.0.0-rc.0":
     version "2.0.0-rc.0"
     resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-rc.0.tgz#afe4892a548db25e3ffd81ec03ba9948e03d4e5f"
@@ -973,6 +997,14 @@ Lockfile:
     dependencies:
       color-convert "^2.0.1"
   
+  anymatch@~3.1.2:
+    version "3.1.2"
+    resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.2.tgz#c0557c096af32f106198f4f4e2a383537e378716"
+    integrity sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==
+    dependencies:
+      normalize-path "^3.0.0"
+      picomatch "^2.0.4"
+  
   arr-diff@^4.0.0:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/arr-diff/-/arr-diff-4.0.0.tgz#d6461074febfec71e7e15235761a329a5dc7c520"
@@ -1122,6 +1154,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
     integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
   
+  binary-extensions@^2.0.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
+    integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
+  
   bl@^4.1.0:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/bl/-/bl-4.1.0.tgz#451535264182bec2fbbc83a62ab98cf11d9f7b3a"
@@ -1170,7 +1207,7 @@ Lockfile:
       split-string "^3.0.2"
       to-regex "^3.0.1"
   
-  braces@^3.0.1:
+  braces@^3.0.1, braces@~3.0.2:
     version "3.0.2"
     resolved "https://registry.yarnpkg.com/braces/-/braces-3.0.2.tgz#3454e1a462ee8d599e236df336cd9ea4f8afe107"
     integrity sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==
@@ -1362,6 +1399,21 @@ Lockfile:
     dependencies:
       ansi-styles "^4.1.0"
       supports-color "^7.1.0"
+  
+  "chokidar@>=3.0.0 <4.0.0":
+    version "3.5.2"
+    resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
+    integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
+    dependencies:
+      anymatch "~3.1.2"
+      braces "~3.0.2"
+      glob-parent "~5.1.2"
+      is-binary-path "~2.1.0"
+      is-glob "~4.0.1"
+      normalize-path "~3.0.0"
+      readdirp "~3.6.0"
+    optionalDependencies:
+      fsevents "~2.3.2"
   
   chrome-trace-event@^1.0.2:
     version "1.0.3"
@@ -2282,6 +2334,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
     integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
   
+  fsevents@~2.3.2:
+    version "2.3.2"
+    resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+    integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+  
   function-bind@^1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
@@ -2333,7 +2390,7 @@ Lockfile:
     dependencies:
       assert-plus "^1.0.0"
   
-  glob-parent@^5.1.0, glob-parent@^5.1.2:
+  glob-parent@^5.1.0, glob-parent@^5.1.2, glob-parent@~5.1.2:
     version "5.1.2"
     resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
     integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
@@ -2698,6 +2755,13 @@ Lockfile:
     dependencies:
       has-bigints "^1.0.1"
   
+  is-binary-path@~2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-2.1.0.tgz#ea1f7f3b80f064236e83470f86c09c254fb45b09"
+    integrity sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==
+    dependencies:
+      binary-extensions "^2.0.0"
+  
   is-boolean-object@^1.1.0:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/is-boolean-object/-/is-boolean-object-1.1.2.tgz#5c6dc200246dd9321ae4b885a114bb1f75f63719"
@@ -2789,7 +2853,7 @@ Lockfile:
     dependencies:
       has-tostringtag "^1.0.0"
   
-  is-glob@^4.0.0, is-glob@^4.0.1:
+  is-glob@^4.0.0, is-glob@^4.0.1, is-glob@~4.0.1:
     version "4.0.1"
     resolved "https://registry.yarnpkg.com/is-glob/-/is-glob-4.0.1.tgz#7567dbe9f2f5e2467bc77ab83c4a29482407a5dc"
     integrity sha512-5G0tKtBTFImOqDnLB2hG6Bp2qcKEFduo4tZu9MT/H6NQv/ghhy30o55ufafxJ/LdH79LLs2Kfrn85TLKyA7BUg==
@@ -3381,6 +3445,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.75.tgz#6dd8c876b9897a1b8e5a02de26afa79bb54ebbfe"
     integrity sha512-Qe5OUajvqrqDSy6wrWFmMwfJ0jVgwiw4T3KqmbTcZ62qW0gQkheXYhcFM1+lOVcGUoRxcEcfyvFMAnDgaF1VWw==
   
+  normalize-path@^3.0.0, normalize-path@~3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
+    integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+  
   normalize-url@^6.0.1:
     version "6.1.0"
     resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.1.0.tgz#40d0885b535deffe3f3147bec877d05fe4c5668a"
@@ -3639,7 +3708,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
     integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
   
-  picomatch@^2.2.3:
+  picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
     version "2.3.0"
     resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
     integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
@@ -4164,6 +4233,13 @@ Lockfile:
       string_decoder "^1.1.1"
       util-deprecate "^1.0.1"
   
+  readdirp@~3.6.0:
+    version "3.6.0"
+    resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-3.6.0.tgz#74a370bd857116e245b29cc97340cd431a02a6c7"
+    integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
+    dependencies:
+      picomatch "^2.2.1"
+  
   regenerator-runtime@^0.13.7:
     version "0.13.9"
     resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
@@ -4310,6 +4386,13 @@ Lockfile:
     version "2.1.2"
     resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
     integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+  
+  sass@^1.32.4:
+    version "1.39.2"
+    resolved "https://registry.yarnpkg.com/sass/-/sass-1.39.2.tgz#1681964378f58d76fc64a6a502619bd5ac99f660"
+    integrity sha512-4/6Vn2RPc+qNwSclUSKvssh7dqK1Ih3FfHBW16I/GfH47b3scbYeOw65UIrYG7PkweFiKbpJjgkf5CV8EMmvzw==
+    dependencies:
+      chokidar ">=3.0.0 <4.0.0"
   
   saxes@^3.1.9:
     version "3.1.11"
