@@ -1,11 +1,17 @@
 body
-  background-color: yellowgreen
+  background-size: cover
   display: flex
   flex-wrap: wrap
   overflow-y: hidden
   margin: 0
   padding: 0
   height: 100vh
+
+  &.bg-dark
+    background-image: url('../imagenes/desert-dark.svg')
+
+  &.bg-light
+    background-image: url('../imagenes/desert-light.svg')
 
 @import "_content"
 @import "mixins/_menu"
